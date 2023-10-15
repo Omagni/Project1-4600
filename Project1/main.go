@@ -277,7 +277,6 @@ func RRSchedule(w io.Writer, title string, processes []Process) {
 	qtime := 3
 	complete := 0 //completed proccesses (when burst = 0)
 	current := 0  // selected process
-	it := 0       // every iteration
 
 	for complete < len(copyProcesses) {
 
@@ -343,8 +342,6 @@ func RRSchedule(w io.Writer, title string, processes []Process) {
 		if current == 3 {
 			current = 0
 		}
-		// increate iteration count
-		it++
 	}
 
 	count := float64(len(processes))
